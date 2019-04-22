@@ -1,0 +1,24 @@
+package echo;
+option py_generic_services  = true;
+
+message Void {}
+
+message EchoRequest
+{
+    required string message = 1;
+};
+
+message EchoResponse
+{
+    required string message = 1;
+};
+
+service EchoServerService
+{
+    rpc echo_server(EchoRequest) returns (Void);
+};
+
+service EchoClientService
+{
+    rpc echo_client(EchoResponse) returns (Void);
+};
